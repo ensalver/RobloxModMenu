@@ -24,13 +24,13 @@ function UILib:CreateWindow(title)
     ScreenGui.Parent = PlayerGui
 
     local Main = Instance.new("Frame")
-    Main.Size = UDim2.new(0, 280, 0, 250) -- width fixed(0, 280, 0, 250)
+    Main.Size = UDim2.new(0, 290, 0, 250) -- width fixed(0, 280, 0, 250)
     Main.Position = UDim2.new(0.5, -140, 0.5, -125)
     Main.BackgroundColor3 = Color3.fromRGB(40, 40, 40) -- darker background
     Main.BorderSizePixel = 0
-    Main.BorderColor3 = Color3.fromRGB(255, 255, 255)
+    Main.BorderColor3 = Color3.fromRGB(0, 0, 0)
     Main.BorderMode = Enum.BorderMode.Outline
-    Main.BorderSizePixel = 1 -- outline thickness
+    Main.BorderSizePixel = 0.8 -- outline thickness
     Main.SizeConstraint = Enum.SizeConstraint.RelativeXX
     Main.Parent = ScreenGui
 
@@ -66,8 +66,8 @@ function UILib:CreateWindow(title)
         end
     end)
 
-    local TabHolder = Instance.new("Frame")
-    TabHolder.Size = UDim2.new(0, 80, 1, -30)
+    local local TabHolder = Instance.new("Frame")
+    TabHolder.Size = UDim2.new(1, 0, 0, 30)
     TabHolder.Position = UDim2.new(0, 0, 0, 30)
     TabHolder.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
     TabHolder.Parent = Main
@@ -119,6 +119,19 @@ function UILib:CreateButton(text, callback)
     Btn.Size = UDim2.new(1, -20, 0, 30)
     Btn.Position = UDim2.new(0, 10, 0, (#self.Page:GetChildren()) * 35)
     Btn.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+    Btn.BorderSizePixel = 0
+    Btn.AutoButtonColor = true
+    Btn.TextWrapped = false
+    Btn.TextScaled = false
+    Btn.BackgroundTransparency = 0
+    Btn.ClipsDescendants = false
+    Btn.AnchorPoint = Vector2.new(0, 0)
+    Btn.Size = Btn.Size
+    Btn.Position = Btn.Position
+    Btn.ZIndex = 2
+    Btn.Parent = Btn.Parent
+    Btn.UICorner = Instance.new("UICorner", Btn)
+    Btn.UICorner.CornerRadius = UDim.new(0, 6)
     Btn.Text = text
     Btn.TextColor3 = Color3.new(1, 1, 1)
     Btn.Font = Enum.Font.Gotham
@@ -138,6 +151,19 @@ function UILib:CreateToggle(text, default, callback)
     Btn.Size = UDim2.new(1, -20, 0, 30)
     Btn.Position = UDim2.new(0, 10, 0, (#self.Page:GetChildren()) * 35)
     Btn.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+    Btn.BorderSizePixel = 0
+    Btn.AutoButtonColor = true
+    Btn.TextWrapped = false
+    Btn.TextScaled = false
+    Btn.BackgroundTransparency = 0
+    Btn.ClipsDescendants = false
+    Btn.AnchorPoint = Vector2.new(0, 0)
+    Btn.Size = Btn.Size
+    Btn.Position = Btn.Position
+    Btn.ZIndex = 2
+    Btn.Parent = Btn.Parent
+    Btn.UICorner = Instance.new("UICorner", Btn)
+    Btn.UICorner.CornerRadius = UDim.new(0, 6)
     Btn.TextColor3 = Color3.new(1, 1, 1)
     Btn.Text = text .. " (" .. tostring(Val) .. ")"
     Btn.Parent = self.Page
@@ -201,6 +227,19 @@ function UILib:CreateKeybind(text, defaultKey, callback)
     Btn.Size = UDim2.new(1, -20, 0, 30)
     Btn.Position = UDim2.new(0, 10, 0, (#self.Page:GetChildren()) * 35)
     Btn.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+    Btn.BorderSizePixel = 0
+    Btn.AutoButtonColor = true
+    Btn.TextWrapped = false
+    Btn.TextScaled = false
+    Btn.BackgroundTransparency = 0
+    Btn.ClipsDescendants = false
+    Btn.AnchorPoint = Vector2.new(0, 0)
+    Btn.Size = Btn.Size
+    Btn.Position = Btn.Position
+    Btn.ZIndex = 2
+    Btn.Parent = Btn.Parent
+    Btn.UICorner = Instance.new("UICorner", Btn)
+    Btn.UICorner.CornerRadius = UDim.new(0, 6)
     Btn.TextColor3 = Color3.new(1, 1, 1)
     Btn.Text = text .. " [" .. currentKey.Name .. "]"
     Btn.Parent = self.Page
