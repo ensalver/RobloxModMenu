@@ -24,7 +24,7 @@ function UILib:CreateWindow(title)
     ScreenGui.Parent = PlayerGui
 
     local Main = Instance.new("Frame")
-    Main.Size = UDim2.new(0, 290, 0, 250) -- width fixed(0, 280, 0, 250)
+    Main.Size = UDim2.new(0, 250, 0, 280) -- updated size 250x280 -- width fixed(0, 280, 0, 250)
     Main.Position = UDim2.new(0.5, -140, 0.5, -125)
     Main.BackgroundColor3 = Color3.fromRGB(40, 40, 40) -- darker background
     Main.BorderSizePixel = 0
@@ -281,6 +281,22 @@ function UILib:Notify(text, time)
     task.spawn(function()
         task.wait(time)
         Msg:Destroy()
+    end)
+end
+
+-- ANIMATIONS (Fade + Hover)
+local TweenService = game:GetService("TweenService")
+
+function UILib:Fade(obj, goal, time)
+    TweenService:Create(obj, TweenInfo.new(time or 0.25), goal):Play()
+end
+
+function UILib:AnimateButton(btn)
+    btn.MouseEnter:Connect(function()
+        self:Fade(btn, {BackgroundTransparency = 0.1}, 0.15)
+    end)
+    btn.MouseLeave:Connect(function()
+        self:Fade(btn, {BackgroundTransparency = 0}, 0.15)
     end)
 end
 
