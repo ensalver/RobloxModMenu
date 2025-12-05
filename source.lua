@@ -24,10 +24,14 @@ function UILib:CreateWindow(title)
     ScreenGui.Parent = PlayerGui
 
     local Main = Instance.new("Frame")
-    Main.Size = UDim2.new(0, 280, 0, 250)
+    Main.Size = UDim2.new(0, 280, 0, 250) -- width fixed(0, 280, 0, 250)
     Main.Position = UDim2.new(0.5, -140, 0.5, -125)
-    Main.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+    Main.BackgroundColor3 = Color3.fromRGB(40, 40, 40) -- darker background
     Main.BorderSizePixel = 0
+    Main.BorderColor3 = Color3.fromRGB(255, 255, 255)
+    Main.BorderMode = Enum.BorderMode.Outline
+    Main.BorderSizePixel = 1 -- outline thickness
+    Main.SizeConstraint = Enum.SizeConstraint.RelativeXX
     Main.Parent = ScreenGui
 
     local TitleBar = Instance.new("TextLabel")
